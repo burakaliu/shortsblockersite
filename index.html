@@ -8,6 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    @keyframes rainbow-border {
+        0% { border-color: #ff0000; box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+        20% { border-color: #ff8800; box-shadow: 0 0 10px rgba(255, 136, 0, 0.3); }
+        40% { border-color: #ffff00; box-shadow: 0 0 10px rgba(255, 255, 0, 0.3); }
+        60% { border-color: #00ff00; box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); }
+        80% { border-color: #0088ff; box-shadow: 0 0 10px rgba(0, 136, 255, 0.3); }
+        100% { border-color: #ff0000; box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+    }
+
+    .animate-rainbow-border {
+        animation: rainbow-border 3s linear infinite;
+    }
+</style>
 </head>
 <body class="font-inter text-gray-800 antialiased">
     <div
@@ -20,12 +34,12 @@
                     <h1 class="text-8xl font-medium leading-none">Take back control of your <span class="font-extrabold text-red-600">Youtube</span> experience</h1>
                     <p class="text-2xl text-gray-600 mt-8">Block YouTube Shorts and stay focused on the content that matters to you<br></p>
                     <div class="flex gap-4 justify-center mt-8">
-                        <a href="#" class="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 relative group overflow-hidden">
+                        <a href="https://chromewebstore.google.com/detail/getridofshorts/ffajnggecilcmenhlpbpdbjejiaiokoa" class="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 relative group overflow-hidden">
                             <span class="relative z-10">Add to Chrome</span>
                             <div class="absolute inset-0 border-2 rounded-full animate-rainbow-border opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </a>
 
-                        <a href="#" class="inline-block bg-gray-100 text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-all duration-300 flex items-center">More information <span class="ml-2">→</span></a>
+                        <a href="#features" class="inline-block bg-gray-100 text-gray-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-all duration-300 flex items-center scroll-smooth">More information <span class="ml-2">→</span></a>
                     </div>
                 </div>
             </div>
@@ -202,7 +216,7 @@
                 <h2 class="text-6xl font-bold text-white mb-8">Ready to Take Control?</h2>
                 <p class="text-2xl text-white/90 mb-12 max-w-2xl mx-auto">Join thousands of users who have already transformed their YouTube experience into a more focused and productive journey.</p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <a href="#" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-full text-xl font-semibold shadow-lg">
+                    <a href="https://chromewebstore.google.com/detail/getridofshorts/ffajnggecilcmenhlpbpdbjejiaiokoa" class="inline-flex items-center bg-white text-red-600 px-8 py-4 rounded-full text-xl font-semibold shadow-lg">
                         <span>Install Now</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -273,6 +287,10 @@
         // Animate on scroll
         window.addEventListener('scroll', animateTimelineLine);
         window.addEventListener('resize', animateTimelineLine);
+        document.querySelector('a[href="#features"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
